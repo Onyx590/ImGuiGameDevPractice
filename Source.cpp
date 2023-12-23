@@ -228,8 +228,8 @@ public:
 int main(int argc, char* argv[])
 {
 	std::string label;
-	int wWidth = 1080;
-	int wHeight = 1080;
+	int wWidth = 0;
+	int wHeight = 0;
 	float circleRadius = 50;
 	float circleSpeedX = 40;
 	float circleSpeedY = 0.5f;
@@ -243,6 +243,9 @@ int main(int argc, char* argv[])
 			filein >> wWidth >> wHeight;
 		}
 	}
+
+	Shape shapes;
+	shapes.loadFromFile("Config.txt");
 
 	sf::RenderWindow window(sf::VideoMode(wWidth, wHeight), "SFML Works!");
 	window.setFramerateLimit(60);
