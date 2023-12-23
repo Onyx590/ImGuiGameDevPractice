@@ -304,6 +304,10 @@ int main(int argc, char* argv[])
 		//Tells the IMGUI interface to render over the window (basically)
 		ImGui::SFML::Render(window);
 
+		for (auto& c : shapes.getCircles())
+		{
+			
+		}
 		sf::CircleShape circle(circleRadius);
 		circle.setFillColor(sf::Color(250, 250, 0));
 		circle.setPosition(circleSpeedX, 10.0f);
