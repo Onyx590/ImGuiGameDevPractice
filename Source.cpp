@@ -133,7 +133,7 @@ public:
 			if (label == "Circle")
 			{
 				fin >> shapeName >> posX >> posY >> speedX >> speedY >> roy >> giy >> biv >> rad;
-				addCircle(Circle(shapeName, speedX, speedY));
+				addCircle(Circle(shapeName, posX, posY));
 			}
 			if (label == "Rectangle")
 			{
@@ -244,6 +244,17 @@ int main(int argc, char* argv[])
 		}
 	}
 
+
+
+
+
+
+
+
+
+
+
+
 	Shape shapes;
 	shapes.loadFromFile("Config.txt");
 
@@ -264,6 +275,27 @@ int main(int argc, char* argv[])
 	
 	bool drawCircle = true;
 	bool drawText = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -306,14 +338,18 @@ int main(int argc, char* argv[])
 
 		for (auto& c : shapes.getCircles())
 		{
-			
+			sf::CircleShape circle(circleRadius);
+			circle.setPosition(c.getSpeedX(), c.getSpeedY());
+			circle.setFillColor(sf::Color(250, 100, 78));
+			std::cout << "NUmber of circles" << shapes.getCircles().size() << std::endl;
+			std::cout << "Circle Position:" << c.getSpeedX() << ",  " << c.getSpeedY() << std::endl;
+			window.draw(circle);
 		}
-		sf::CircleShape circle(circleRadius);
-		circle.setFillColor(sf::Color(250, 250, 0));
-		circle.setPosition(circleSpeedX, 10.0f);
+		
+		
 		
 
-		window.draw(circle);
+		
 
 		window.display();
 	}
