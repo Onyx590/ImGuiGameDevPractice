@@ -4,3 +4,8 @@ my goal is to draw moving shapes that render on the screen. These shapes should 
 
 One thing that you will notice in this project is the console output statements that I used for debugging purposes.
 So, if you notice a buch of numbers printing infinitely in your command line console, those are printing for debugging purposes.
+
+
+Date: 12/28/2023
+For Now, I am going to have to come back to this project later for restructuring 
+I need to restructure this in an ECS format
